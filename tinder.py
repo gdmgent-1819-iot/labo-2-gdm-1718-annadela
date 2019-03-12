@@ -53,10 +53,7 @@ def senseHatPerson():
     sense.show_message(profileName, text_colour= messageColour)
     sense.show_message(str(profileAge), text_colour= messageColour)
 
-def likePerson():    
-    global dataName
-    global dataAge
-
+def likePerson():
     person = {'naam: ': dataName, 'leeftijd: ': dataAge, 'gekozen: ': 'like'}
 
     with open('data.json', "a") as json_file:
@@ -64,20 +61,14 @@ def likePerson():
 
 
 def dislikePerson():
-    global dataName
-    global dataAge
-
     person = {'naam: ': dataName, 'leeftijd: ': dataAge, 'gekozen: ': 'dislike'}
 
-    # update data.json
     with open('data.json', "a") as json_file:
         json_file.write("{}\n".format(json.dumps(person)))
 
     sense.clear()
 
 def senseHatPerson():
-    global dataName
-    global dataAge
 
     messageColour = (randint(0,255), randint(0,255), randint(0,255))
     sense.show_message(dataName, text_colour= messageColour)

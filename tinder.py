@@ -39,12 +39,6 @@ x = [
     r, w, w, w, w, w, w, r,    
     ]
 
-
-def loadData():
-    with open('data.json') as json_data:
-        data = json.load(json_data)
-        return data
-
 def senseHatPerson():
     global dataName
     global dataAge
